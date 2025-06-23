@@ -1,0 +1,36 @@
+package org.example.drools
+
+import org.example.Person
+
+rule "מבוגר"
+    when
+        $person : Person(age >= 18)
+    then
+        System.out.println($person.getName() + ($person.getGender().equals("female") ? " היא מבוגרת" : " הוא מבוגר"));
+        modify($person) { setAdult(true) }
+end
+
+rule "צעיר"
+    when
+        $person : Person(age < 18)
+    then
+        System.out.println($person.getName() + ($person.getGender().equals("female") ? " היא צעירה" : " הוא צעיר"));
+        modify($person) { setAdult(false) }
+end
+
+rule "זכר"
+    when
+        $person : Person(gender == "male")
+    then
+        System.out.println($person.getName() + " הוא זכר.");
+        modify($person) { setFemale(false) }
+end
+
+rule "נקבה"
+    when
+        $person : Person(gender == "female")
+    then
+        System.out.println($person.getName() + " היא נקבה.");
+        modify($person) { setFemale(true) }
+end
+
