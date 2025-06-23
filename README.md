@@ -1,5 +1,3 @@
-﻿# RulesEngineDrools
-
 # Drools Example: Person Rule Engine
 
 This project demonstrates the use of **Drools** (a Business Rule Management System) in Java to evaluate characteristics of `Person` objects — such as determining gender (male/female) and whether a person is an adult — based on predefined rules.
