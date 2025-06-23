@@ -18,19 +18,21 @@ rule "צעיר"
         modify($person) { setAdult(false) }
 end
 
-rule "זכר"
-    when
-        $person : Person(gender == "male")
-    then
-        System.out.println($person.getName() + " הוא זכר.");
-        modify($person) { setFemale(false) }
-end
 
-rule "נקבה"
-    when
-        $person : Person(gender == "female")
-    then
+rule "מגדר"
+when
+    $person : Person(gender != null)
+then
+    if ($person.getGender().equals("female")) {
         System.out.println($person.getName() + " היא נקבה.");
-        modify($person) { setFemale(true) }
+        modify($person) {
+            setFemale(true)
+        };
+    } else{
+        System.out.println($person.getName() + " הוא זכר.");
+        modify($person) {
+            setFemale(false)
+        };
+    }
 end
 
