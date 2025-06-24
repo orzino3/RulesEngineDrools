@@ -35,14 +35,14 @@ src/
 ## 📜 Example Output
 ```
 ----------------------------------
-Initial state of Person 1: Person[name='אור זינו', age=29, adult=false, gender=null]
+Initial state of Person 1: Person[name='אור זינו', age=29, adult=לא מוגדר, gender=לא מוגדר]
 ...
 ----------------------------------
 אור זינו הוא מבוגר
 טוהר קרסנובסקי היא מבוגרת
 ...
 ----------------------------------
-Final state of Person 1: Person[name='אור זינו', age=29, adult=true, gender=male]
+Final state of Person 1: Person[name='אור זינו', age=29, adult=בוגר, gender=זכר]
 ...
 ----------------------------------
 ```
